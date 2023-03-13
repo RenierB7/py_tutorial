@@ -1,1 +1,1 @@
-jupyter-book build ./py_tutorial && ghp-import -n -p -f ./py_tutorial/_build/html
+jupyter-book clean ./py_tutorial && jupyter-book build ./py_tutorial && ghp-import -n -p -f ./py_tutorial/_build/html
