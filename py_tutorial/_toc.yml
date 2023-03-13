@@ -8,3 +8,6 @@ chapters:
   sections:
   - file: basic-data-types/int/index
   - file: basic-data-types/str/index
+- file: adv-data-types/index
+  sections: 
+  - file: adv-data-types/list/index

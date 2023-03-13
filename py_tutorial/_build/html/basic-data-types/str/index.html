@@ -354,7 +354,21 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of Contents:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulation">Manipulation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexed-access">Indexed access</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenation">Concatenation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#justifiying">Justifiying</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting">Formatting</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#f-strings"><code class="docutils literal notranslate"><span class="pre">f-strings</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#join"><code class="docutils literal notranslate"><span class="pre">.join()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#replace"><code class="docutils literal notranslate"><span class="pre">.replace()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -369,8 +383,279 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="strings-str">
 <h1>Strings (<code class="docutils literal notranslate"><span class="pre">str</span></code>)<a class="headerlink" href="#strings-str" title="Permalink to this heading">#</a></h1>
 <p>Strings are how python stores text. They are effectively a list of individual characters.</p>
-<section id="table-of-contents">
-<h2>Table of Contents:<a class="headerlink" href="#table-of-contents" title="Permalink to this heading">#</a></h2>
+<p>Table of Contents:</p>
+<ul class="simple">
+<li><p><span class="xref myst">Manipulation</span></p></li>
+<li><p><span class="xref myst">Attributes</span></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, World!
+&lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="manipulation">
+<h2>Manipulation<a class="headerlink" href="#manipulation" title="Permalink to this heading">#</a></h2>
+<p>Strings can be mainpulated in many ways.</p>
+<section id="indexed-access">
+<h3>Indexed access<a class="headerlink" href="#indexed-access" title="Permalink to this heading">#</a></h3>
+<p>You can access strings the same way you would a <span class="xref myst">list</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_str</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_str</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_str</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_str</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>l
+Hel
+d!
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="concatenation">
+<h3>Concatenation<a class="headerlink" href="#concatenation" title="Permalink to this heading">#</a></h3>
+<p>Strings can be concatenated (added together) using the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">part1</span> <span class="o">=</span> <span class="s2">&quot;Hello, &quot;</span>
+<span class="n">part2</span> <span class="o">=</span> <span class="s2">&quot;World!&quot;</span>
+<span class="n">whole</span> <span class="o">=</span> <span class="n">part1</span> <span class="o">+</span> <span class="n">part2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">part1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">part2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">whole</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, 
+World!
+Hello, World!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Strings can also be “multiplied” using the <code class="docutils literal notranslate"><span class="pre">*</span></code> operator.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_str</span> <span class="o">=</span> <span class="s2">&quot;Ho&quot;</span>
+<span class="n">mult_str</span> <span class="o">=</span> <span class="n">my_str</span> <span class="o">*</span> <span class="mi">4</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mult_str</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HoHoHoHo
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are also several <em>methods</em> which can be used on strings, such as:</p>
+<section id="justifiying">
+<h4>Justifiying<a class="headerlink" href="#justifiying" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_str</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Right justified:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_str</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">30</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Centered:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_str</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">30</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Left justfied:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_str</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">30</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Right justfied using </span><span class="se">\&quot;</span><span class="s2">#</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_str</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="s2">&quot;#&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Right justified:
+                 Hello, World!
+Centered:
+        Hello, World!         
+Left justfied:
+Hello, World!                 
+Right justfied using &quot;#&quot;
+#################Hello, World!
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="formatting">
+<h4>Formatting<a class="headerlink" href="#formatting" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;Jacob&quot;</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello </span><span class="si">%s</span><span class="s2">&quot;</span><span class="o">%</span><span class="s2">&quot;Jacob&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello Jacob
+Hello Jacob
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="f-strings">
+<h4><code class="docutils literal notranslate"><span class="pre">f-strings</span></code><a class="headerlink" href="#f-strings" title="Permalink to this heading">#</a></h4>
+<p>f-strings are a powerful string manipulation feature of python, allowing simple and readable string substitutions and formatting.</p>
+<p>To create an f-string you simply put an ‘f’ in front of the opening quote of a string.</p>
+<p>i.e.)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Kyle&quot;</span>
+<span class="n">my_fstring</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Hello </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>The value of <code class="docutils literal notranslate"><span class="pre">my_fstring</span></code> is now <code class="docutils literal notranslate"><span class="pre">&quot;Hello</span> <span class="pre">Kyle&quot;</span></code>.</p>
+<p>The f-string evaulates the expressions in the braces (curly brackets <code class="docutils literal notranslate"><span class="pre">{}</span></code>) and substitutes it into the string. This allows you to put almost anything into an f-string.</p>
+<p>For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A random number between 1 and 6: </span><span class="si">{</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The value of x*y is </span><span class="si">{</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The average of x and y is </span><span class="si">{</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The larger of </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A random number between 1 and 6: 3.
+The value of x*y is 42.
+The average of x and y is 6.5.
+The larger of 6 and 7 is 7.
+</pre></div>
+</div>
+</div>
+</div>
+<p>f-strings also allow you to format the data returned from the expression in braces, using format strings.</p>
+<p>Format strings are created by placing a colon (<code class="docutils literal notranslate"><span class="pre">:</span></code>) after the expression, and providing a format identifier after.</p>
+<p>Some basic formats incude:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">:&lt;5</span></code> : Left justify the data in a width of 5</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:0&lt;5</span></code>: Left justfiy using zeros</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:&gt;5</span></code> : Right justify</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:^10</span></code>: Center the value</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:.5f</span></code>: Format the value as a flaoting-point, and dispaly with 5 decimal points</p></li>
+</ul>
+<p>Some examples:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">4.3472</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;x with no formatting: </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x aligned:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;|&quot;</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">&lt;20</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;|&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;|&quot;</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">^20</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;|&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;|&quot;</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">&gt;20</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;|&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;y with no formatting: </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y aligned:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;|&quot;</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">y</span><span class="si">:</span><span class="s2">&lt;20</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;|&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;|&quot;</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">y</span><span class="si">:</span><span class="s2">^20</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;|&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;|&quot;</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">y</span><span class="si">:</span><span class="s2">&gt;20</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;|&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;y to two decimal places: </span><span class="si">{</span><span class="n">y</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x with no formatting: 5
+x aligned:
+|5                   |
+|         5          |
+|                   5|
+
+y with no formatting: 4.3472
+y aligned:
+|4.3472              |
+|       4.3472       |
+|              4.3472|
+
+y to two decimal places: 4.35
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="methods">
+<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this heading">#</a></h3>
+<p>Strings have several useful and commonly used methods such as:</p>
+<section id="join">
+<h4><code class="docutils literal notranslate"><span class="pre">.join()</span></code><a class="headerlink" href="#join" title="Permalink to this heading">#</a></h4>
+<p>Takes an iterable as an argument, and returns a string with each of those items joined using the string it’s used with.</p>
+<p>i.e.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">my_list</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">my_list</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &lt;your string goes here&gt; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">my_list</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a#b#c#d#e
+a.b.c.d.e
+a &lt;your string goes here&gt; b &lt;your string goes here&gt; c &lt;your string goes here&gt; d &lt;your string goes here&gt; e
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="replace">
+<h4><code class="docutils literal notranslate"><span class="pre">.replace()</span></code><a class="headerlink" href="#replace" title="Permalink to this heading">#</a></h4>
+<p>When used on a string, returns a new string where all occurences of its first argument are replaced with its second. This does not modify the original string in any way.</p>
+<p>i.e.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_str</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_str</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;!&quot;</span><span class="p">,</span> <span class="s2">&quot;?&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;l&quot;</span><span class="p">,</span> <span class="s2">&quot;#&quot;</span><span class="p">))</span>
+<span class="c1"># Printing the original string will show that no changes have been made to it</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_str</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, World!
+Hello, World?
+He##o, Wor#d!
+Hello, World!
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 </section>
 
@@ -426,7 +711,21 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of Contents:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulation">Manipulation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexed-access">Indexed access</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenation">Concatenation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#justifiying">Justifiying</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting">Formatting</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#f-strings"><code class="docutils literal notranslate"><span class="pre">f-strings</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#join"><code class="docutils literal notranslate"><span class="pre">.join()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#replace"><code class="docutils literal notranslate"><span class="pre">.replace()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
