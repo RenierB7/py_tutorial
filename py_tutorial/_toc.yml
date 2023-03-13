@@ -5,5 +5,3 @@ format: jb-book
 root: index
 chapters:
 - file: basic-data-types/index
-  sections: 
-  - file: basic-data-types/int/index
