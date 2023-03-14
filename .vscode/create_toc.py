@@ -22,7 +22,7 @@ for folder in folders:
         chapter += "\n  sections:"
         for section in folders[folder]:
             print(f"\tAdding section {section}")
-            chapter += f"\n  - file: {section[14:]}/index"
+            chapter += f"\n  - file: {section[14:]}"
     print("Chapter added to toc")
     toc += chapter
 
