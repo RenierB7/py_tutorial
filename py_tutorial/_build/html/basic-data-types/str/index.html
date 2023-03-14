@@ -157,6 +157,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Basic Datatypes</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../float/index.html">Floats (<code class="docutils literal notranslate"><span class="pre">float</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../int/index.html">Integers (<code class="docutils literal notranslate"><span class="pre">int</span></code>)</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Strings (<code class="docutils literal notranslate"><span class="pre">str</span></code>)</a></li>
 </ul>
@@ -365,6 +366,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#join"><code class="docutils literal notranslate"><span class="pre">.join()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#replace"><code class="docutils literal notranslate"><span class="pre">.replace()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#startswith-endswith"><code class="docutils literal notranslate"><span class="pre">.startswith()</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">.endswith()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lower-upper"><code class="docutils literal notranslate"><span class="pre">.lower()</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">.upper()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -385,8 +388,8 @@ document.write(`
 <p>Strings are how python stores text. They are effectively a list of individual characters.</p>
 <p>Table of Contents:</p>
 <ul class="simple">
-<li><p><span class="xref myst">Manipulation</span></p></li>
-<li><p><span class="xref myst">Attributes</span></p></li>
+<li><p>Manipulation</p></li>
+<li><p>Attributes</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -409,7 +412,7 @@ document.write(`
 <p>Strings can be mainpulated in many ways.</p>
 <section id="indexed-access">
 <h3>Indexed access<a class="headerlink" href="#indexed-access" title="Permalink to this heading">#</a></h3>
-<p>You can access strings the same way you would a <span class="xref myst">list</span>.</p>
+<p>You can access strings the same way you would a list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_str</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span>
@@ -544,7 +547,7 @@ Hello Jacob
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A random number between 1 and 6: 3.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A random number between 1 and 6: 6.
 The value of x*y is 42.
 The average of x and y is 6.5.
 The larger of 6 and 7 is 7.
@@ -655,6 +658,53 @@ Hello, World!
 </div>
 </div>
 </section>
+<section id="startswith-endswith">
+<h4><code class="docutils literal notranslate"><span class="pre">.startswith()</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">.endswith()</span></code><a class="headerlink" href="#startswith-endswith" title="Permalink to this heading">#</a></h4>
+<p>These functions check whether a string starts or ends with a specified string.</p>
+<p>i.e.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_str</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">my_str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;Hel&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">my_str</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;rld!&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_str</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;bar&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+True
+False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="lower-upper">
+<h4><code class="docutils literal notranslate"><span class="pre">.lower()</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">.upper()</span></code><a class="headerlink" href="#lower-upper" title="Permalink to this heading">#</a></h4>
+<p>These functions return new strings that have been converted to all upper-/lowercase letters</p>
+<p>i.e.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_str</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">my_str</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_str</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello, world!
+HELLO, WORLD!
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 </section>
@@ -722,6 +772,8 @@ Hello, World!
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#join"><code class="docutils literal notranslate"><span class="pre">.join()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#replace"><code class="docutils literal notranslate"><span class="pre">.replace()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#startswith-endswith"><code class="docutils literal notranslate"><span class="pre">.startswith()</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">.endswith()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lower-upper"><code class="docutils literal notranslate"><span class="pre">.lower()</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">.upper()</span></code></a></li>
 </ul>
 </li>
 </ul>

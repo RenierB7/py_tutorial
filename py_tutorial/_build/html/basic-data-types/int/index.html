@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Strings (str)" href="../str/index.html" />
-    <link rel="prev" title="Basic Datatypes" href="../index.html" />
+    <link rel="prev" title="Floats (float)" href="../float/index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -158,6 +158,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Basic Datatypes</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../float/index.html">Floats (<code class="docutils literal notranslate"><span class="pre">float</span></code>)</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Integers (<code class="docutils literal notranslate"><span class="pre">int</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../str/index.html">Strings (<code class="docutils literal notranslate"><span class="pre">str</span></code>)</a></li>
 </ul>
@@ -355,8 +356,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-operations">Common Operations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-a-list-of-digits">Get a list of digits</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -370,12 +373,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="integers-int">
 <h1>Integers (<code class="docutils literal notranslate"><span class="pre">int</span></code>)<a class="headerlink" href="#integers-int" title="Permalink to this heading">#</a></h1>
-<p>Integers are the simplest datatype in python. THey represent any whole number.</p>
-<p>Table of Contents:</p>
-<ul class="simple">
-<li><p><span class="xref myst">Methods</span></p></li>
-<li><p><span class="xref myst">Attributes</span></p></li>
-</ul>
+<p>Integers are the simplest datatype in python. They represent any whole number.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
@@ -392,11 +390,35 @@ document.write(`
 </div>
 </div>
 </div>
-<section id="methods">
-<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this heading">#</a></h2>
+<p>Many int operations will endup returning a float, especially division using the ‘true division’ operator (<code class="docutils literal notranslate"><span class="pre">/</span></code>). To ensure data remains an int , use the ‘floor division’ operator (<code class="docutils literal notranslate"><span class="pre">//</span></code>).</p>
+<section id="common-operations">
+<h2>Common Operations<a class="headerlink" href="#common-operations" title="Permalink to this heading">#</a></h2>
+<p>Integers don’t have many useful methods, as they are much simpler than most other data types. however, there are several tricks that can be used to manipulate them.</p>
+<section id="get-a-list-of-digits">
+<h3>Get a list of digits<a class="headerlink" href="#get-a-list-of-digits" title="Permalink to this heading">#</a></h3>
+<p>This casts the <code class="docutils literal notranslate"><span class="pre">int</span></code> to a <code class="docutils literal notranslate"><span class="pre">str</span></code>, then converts the <code class="docutils literal notranslate"><span class="pre">str</span></code> to a <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">46382</span>
+<span class="c1"># Convert to a list</span>
+<span class="n">digits</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">digits</span><span class="p">)</span>
+<span class="n">sum_digits</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">digit</span> <span class="ow">in</span> <span class="n">digits</span><span class="p">:</span>
+    <span class="c1"># digits in the list are stored as strings, and so must be converted into ints</span>
+    <span class="n">sum_digits</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">digit</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sum_digits</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;4&#39;, &#39;6&#39;, &#39;3&#39;, &#39;8&#39;, &#39;2&#39;]
+23
+</pre></div>
+</div>
+</div>
+</div>
 </section>
-<section id="attributes">
-<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -429,12 +451,12 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../index.html"
+       href="../float/index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Basic Datatypes</p>
+        <p class="prev-next-title">Floats (<code class="docutils literal notranslate"><span class="pre">float</span></code>)</p>
       </div>
     </a>
     <a class="right-next"
@@ -461,8 +483,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-operations">Common Operations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-a-list-of-digits">Get a list of digits</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
