@@ -1,6 +1,9 @@
 {
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
+
+    // for this build task to work, your cwd must be the folder enclosing thisone, the base repo, or they will fail.
+    // you also will need to pip install jupyter-book and ghp-import
     "version": "2.0.0",
     "tasks": [
         {
