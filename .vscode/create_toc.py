@@ -16,13 +16,13 @@ for folder in folders:
 print("Sections scanned.\nBuilding toc...")
 for folder in folders:
     print(f"Adding chapter {folder}")
-    chapter = f"\n- file: {folder[14:]}/index"
+    chapter = f"\n - file: {folder[14:]}/index"
     if folders[folder].keys():
         print("Sections available for chapter, adding sections...")
-        chapter += "\n  sections:"
+        chapter += "\n   sections:"
         for section in folders[folder]:
             print(f"\tAdding section {section}")
-            chapter += f"\n  - file: {section[14:]}/index"
+            chapter += f"\n   - file: {section[14:]}/index"
     print("Chapter added to toc")
     toc += chapter
 
