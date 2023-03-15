@@ -30,7 +30,7 @@ jobs:
       - run: pip install -r ./.github/build-requirements.txt -q
       - run: python3 ./.github/create_toc.py
       - run: jupyter-book clean ./py_tutorial
-      - run: jupyter-book build ./py_tutorial
+      - run: jupyter-book build ./py_tutorial -q
       - run: ghp-import -n -p -f ./py_tutorial/_build/html
   
 
