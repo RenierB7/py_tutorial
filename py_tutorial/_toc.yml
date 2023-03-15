@@ -4,12 +4,14 @@
 format: jb-book
 root: index
 chapters: 
- - file: adv-data-types/index
+ - file: P1-basic-data-types/index
    sections:
-   - file: adv-data-types/list/index
-   - file: adv-data-types/set/index
- - file: basic-data-types/index
+   - file: P1-basic-data-types/float/index
+   - file: P1-basic-data-types/int/index
+   - file: P1-basic-data-types/str/index
+ - file: P2-adv-data-types/index
    sections:
-   - file: basic-data-types/float/index
-   - file: basic-data-types/int/index
-   - file: basic-data-types/str/index
+   - file: P2-adv-data-types/dict/index
+   - file: P2-adv-data-types/list/index
+   - file: P2-adv-data-types/set/index
+   - file: P2-adv-data-types/tuple/index
