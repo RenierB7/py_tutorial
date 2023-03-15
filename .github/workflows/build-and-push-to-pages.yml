@@ -23,12 +23,13 @@ jobs:
   build-and-push-to-pages:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      #- uses: actions/checkout@v3
       - uses: actions/setup-python@v4
         with:
           python-version: "3.10"
-      - run: pip install -r ./.github/build-requirements.txt
+      - run: pip install -r ./.github/build-requirements.txt -q
       - run: python3 ./.github/create_toc.py
+      - run: jupyter-book clean ./py_tutorial
       - run: jupyter-book build ./py_tutorial
       - run: ghp-import -n -p -f ./py_tutorial/_build/html
   
