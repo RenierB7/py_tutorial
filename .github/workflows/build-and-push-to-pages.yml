@@ -21,7 +21,7 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: "3.10"
-      - run: pip install -r ./build-requirements.txt
+      - run: pip install -r ./.github/build-requirements.txt
       - run: python3 ./.vscode/create_toc.py
       - run: jupyter-book build ./py_tutorial
       - run: ghp-import -n -p -f ./py_tutorial/_build/html
