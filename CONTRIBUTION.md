@@ -24,3 +24,5 @@ Please follow the structure of the repo, i.e.)
 ```
 
 The build task is automated, and assumes that files are laid out like this.
+
+The build task is defined in .github\workflows\build-and-push-to-pages.yml, and runs on push/pull-request.

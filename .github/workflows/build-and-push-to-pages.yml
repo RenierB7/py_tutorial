@@ -4,11 +4,15 @@ on:
   push:
     branches:
       - "main"
+    paths:
+      - "py_tutorial/*"
   pull_request:
     branches:
       - "main"
     types:
       - closed
+  workflow_dispatch:
+    
 
 permissions:
   contents: write
