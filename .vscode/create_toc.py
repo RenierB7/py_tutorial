@@ -1,6 +1,6 @@
 import os
 def section_sort_key(x):
-    return ord(x[0])
+    return x.startswith("S") and int(x[1])
 
 def chapter_sort_key(x):
     return x.startswith("P") and int(x[1])

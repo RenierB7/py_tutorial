@@ -6,12 +6,23 @@ root: index
 chapters: 
  - file: P1-basic-data-types/index
    sections:
-   - file: P1-basic-data-types/float/index
-   - file: P1-basic-data-types/int/index
-   - file: P1-basic-data-types/str/index
+   - file: P1-basic-data-types/S1-int/index
+   - file: P1-basic-data-types/S2-float/index
+   - file: P1-basic-data-types/S3-str/index
  - file: P2-adv-data-types/index
    sections:
-   - file: P2-adv-data-types/dict/index
-   - file: P2-adv-data-types/list/index
-   - file: P2-adv-data-types/set/index
-   - file: P2-adv-data-types/tuple/index
+   - file: P2-adv-data-types/S1-list/index
+   - file: P2-adv-data-types/S2-tuple/index
+   - file: P2-adv-data-types/S3-set/index
+   - file: P2-adv-data-types/S4-dict/index
+ - file: P3-control-structures/index
+   sections:
+   - file: P3-control-structures/S1-if/index
+   - file: P3-control-structures/S2-while/index
+   - file: P3-control-structures/S3-for/index
+   - file: P3-control-structures/S4-match/index
+   - file: P3-control-structures/S5-with/index
+ - file: P4-builtins/index
+   sections:
+   - file: P4-builtins/S1-functions/index
+   - file: P4-builtins/S2-variables/index
