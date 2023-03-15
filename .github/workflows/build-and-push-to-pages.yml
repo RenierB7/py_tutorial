@@ -19,7 +19,9 @@ jobs:
         with:
           python-version: "3.10"
       - run: pip install -r ./build-requirements.txt
-      - run: sh .\\.vscode\\build.sh
+      - run: python3 ./.vscode/create_toc.py
+      - run: jupyter-book build ./py_tutorial
+      - run: ghp-import -n -p -f ./py_tutorial/_build/html
   
 
 
