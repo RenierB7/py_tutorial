@@ -12,7 +12,7 @@ toc = """# Table of contents
 format: jb-book
 root: index
 options:
- numbered: true
+ numbered: 2
 chapters: """
 print("Scanning root directory for chapters...")
 folders = {folder.path:{} for folder in os.scandir("./py_tutorial/") if folder.name not in ["_build"] and folder.is_dir()}
