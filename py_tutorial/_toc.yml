@@ -4,7 +4,7 @@
 format: jb-book
 root: index
 options:
- numbered: true
+ numbered: 2
 chapters: 
  - file: P1-basic-data-types/index
    sections:

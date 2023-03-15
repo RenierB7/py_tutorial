@@ -1,9 +1,13 @@
-import os
+import os, re
 def section_sort_key(x):
-    return x.startswith("S") and int(x[1])
+    pattern = re.compile(r".*?S(\d+).*?")
+    match = pattern.fullmatch(x)
+    return bool(match) and int(match.group(1))
 
 def chapter_sort_key(x):
-    return x.startswith("P") and int(x[1])
+    pattern = re.compile(r".*?P(\d+).*?")
+    match = pattern.fullmatch(x)
+    return bool(match) and int(match.group(1))
 
 
 toc = """# Table of contents
@@ -24,7 +28,7 @@ for folder in folders:
 print("Sections scanned.\nBuilding toc...\n")
 for folder in sorted(folders.keys(), key=chapter_sort_key):
 
-    print(f"Adding chapter ({chapter_sort_key(folder)}){folder}")
+    print(f"Adding chapter {(chapter_num := chapter_sort_key(folder))}: ({folder})")
     chapter = f"\n - file: {folder[14:]}/index"
 
     if folders[folder]:
@@ -32,7 +36,7 @@ for folder in sorted(folders.keys(), key=chapter_sort_key):
         chapter += "\n   sections:"
 
         for section in sorted(folders[folder], key = section_sort_key):
-            print(f"\tAdding section ({section_sort_key(section)}){section}")
+            print(f"\tAdding section {chapter_num}.{section_sort_key(section)}: ({section})")
             chapter += f"\n   - file: {section[14:]}/index"
             
     print("Chapter added to toc\n")
