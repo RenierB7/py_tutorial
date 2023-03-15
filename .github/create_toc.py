@@ -11,22 +11,30 @@ toc = """# Table of contents
 
 format: jb-book
 root: index
+options:
+ numbered: true
 chapters: """
 print("Scanning root directory for chapters...")
 folders = {folder.path:{} for folder in os.scandir("./py_tutorial/") if folder.name not in ["_build"] and folder.is_dir()}
+
 print("Directory scanned.\nScanning for sections...")
 for folder in folders:
-    folders[folder] = [c_folder.path.replace("\\","/") for c_folder in os.scandir(folder) if c_folder.name not in ["_build"] and c_folder.is_dir()]
+    folders[folder] = [c_folder.path.replace("\\","/") for c_folder in os.scandir(folder) if c_folder.name not in ["_build"] and c_folder.is_dir()] # type: ignore
+ 
 print("Sections scanned.\nBuilding toc...")
 for folder in sorted(folders.keys(), key=chapter_sort_key):
+
     print(f"Adding chapter {folder}")
     chapter = f"\n - file: {folder[14:]}/index"
+
     if folders[folder]:
         print("Sections available for chapter, adding sections...")
         chapter += "\n   sections:"
+
         for section in sorted(folders[folder], key = section_sort_key):
             print(f"\tAdding section {section}")
             chapter += f"\n   - file: {section[14:]}/index"
+            
     print("Chapter added to toc")
     toc += chapter
 
