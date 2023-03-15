@@ -1,1 +1,1 @@
-jupyter-book clean ./py_tutorial && py ./.vscode/create_toc.py && jupyter-book build ./py_tutorial && ghp-import -n -p -f ./py_tutorial/_build/html
+ py ./.vscode/create_toc.py && jupyter-book build ./py_tutorial && ghp-import -n -p -f ./py_tutorial/_build/html
